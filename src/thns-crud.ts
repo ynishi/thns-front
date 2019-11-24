@@ -1,16 +1,20 @@
 import axios from "axios";
 
-var endpoint = "http://localhost:8080";
+var endpoint = "";
 
 type ConvID = number;
 
-interface ConvRequest {
+export interface ConvRequest {
   convId: ConvID;
   input: string;
   output: string;
   valid: boolean;
   err: string;
 }
+
+export const setEndpoint = (argEndpoint: string) => {
+  endpoint = argEndpoint;
+};
 
 export const newConvRequest = (): ConvRequest => {
   return {
